@@ -1,0 +1,35 @@
+<%- include("../partials/header.ejs") %>
+
+
+
+<div class="container">
+    <h1 style="text-align:center;">Sign up baby
+            
+    </h1>
+    <div class="row">
+        <div style="width:30%; margin:20px auto;">
+                <form action="/register" method="POST">     
+                    <div class="form-froup">
+                        <input class="form-control"type="text" name="username" placeholder="enter username"></br>
+                    </div>
+                        
+                    <div class="form-froup">
+                        <input class="form-control" type="password" name="password" placeholder="enter password"><br>
+                    </div>
+
+                    <div class="form-froup">
+                        <input class="form-control" type="text" name="email" placeholder="enter email"><br>
+                    </div>
+                    <div class="form-froup">
+                        <input class="form-control" type="text" name="phoneno" placeholder="enter mobile number"><br>
+                    </div>
+
+                    <div class="form-froup">
+                            <button class="btn btn-lg btn-primary btn-block"type="submit">Sign up</button>
+                        </div>
+                </form>
+            <a href="landing">Go back</a>
+
+        </div>
+    </div>
+</div>

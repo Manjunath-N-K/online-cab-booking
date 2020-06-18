@@ -1,0 +1,37 @@
+.thumbnail img{
+   height:40%;
+   width:70%;
+}
+
+.thumbnail{
+    padding:0;
+}
+
+.thumbnail caption-full{
+    padding:9px;
+}
+
+#delete-form{
+display:inline;
+}
+
+
+.delete{
+    display:inline;
+    }
+
+
+    #landing-header {
+      
+        z-index: 1;
+        position: relative;
+        text-align: center;
+        padding-top: 30vh;
+      }
+
+      #landing-header h1 {
+       color:black;
+      }
+
+
+     

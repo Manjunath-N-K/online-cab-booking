@@ -1,0 +1,72 @@
+<%- include("../partials/header.ejs") %>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">Taxify</p>
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%= driver.image %>" alt="no">
+                <div class="caption-full">
+                    <h4 class="pull-right"><%= driver.price %> Rs</h4>
+                    <h4><a><%=driver.name%></a></h4>
+                    <p><%= driver. licno%></p>
+                    <p><%= driver.phone %></p>
+
+<p><%= driver.place %></p>
+<p><%= driver.car %></p>
+<p><%= driver.reg %></p>
+<p><%= driver.email %></p>
+<p><%= driver.licNo %></p>
+<p>
+ <em>Submitted by <%= driver.author.username %></em>
+    </p>
+    <% if(currentUser && driver.author.id.equals(currentUser._id)) { %>
+    <a class="btn btn-warning" href="/drivers/<%= driver._id %>/edit">edit</a>
+<form id="delete-form" action="/drivers/<%= driver._id %>?_method=DELETE" method="POST">
+    <button class="btn btn-danger">DELETE</button>
+</form> 
+<% } %>
+
+                </div>
+            </div>
+            <div class="well">
+                <div class="text-right">
+                    <a class="btn btn-success" href="/drivers/<%= driver._id %>/comments/new">Add New Comment</a>
+                </div>
+                <hr>
+                <% driver.comments.forEach(function(comment){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><%= comment.author.username %></strong>
+                            <span class="pull-right">10 days ago</span>
+                            <p>
+                                <%= comment.text %> 
+                            </p>
+                            
+                            <% if(currentUser &&
+                            comment.author.id.equals(currentUser._id)) { %>          <a class="btn btn-warning" href="/drivers/<%=driver._id %>/comments/<%= comment._id %>/edit">0EDIT</a>                
+ <form class="delete" action="/drivers/<%=driver._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+    <input type="submit" class="btn btn-danger" value="delete">
+</form>   
+<% } %>                     
+                        </div>
+                    </div>
+                <% }) %> 
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

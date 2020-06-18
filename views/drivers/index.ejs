@@ -1,0 +1,48 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="conatiner">
+      <h1><i class="fas fa-taxi"></i> welcome to driver page</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem,
+        laboriosam?
+     <br>
+      <a href="/drivers/new" class="btn btn-primary btn-lg">add new drivers</a>
+    </p>
+    <h4>
+        <%= currentUser %>
+    </h4>
+        </div>
+    </div>
+    
+
+<div class="row text-center" style="display:flex; flex-wrap:wrap;">
+<% drivers.forEach(function(driver){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="<%= driver.image %>" alt="noo">
+                <div class="caption">
+                    <h4>Name: <%= driver.name %></h4>
+                    <h5>Place:<%= driver.place %></h5>
+                    <h5>License :<%= driver.licNo %></h5>
+                </div>
+                <p>
+                    <a href="/drivers/<%= driver._id %>" class="btn btn-primary">More info</a>
+
+
+                </p>
+
+
+
+
+
+
+            </div>
+ 
+       </div>
+<% }); %>
+     </div>
+</div>
+
+<%- include("../partials/footer.ejs") %>

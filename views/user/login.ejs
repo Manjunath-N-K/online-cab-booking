@@ -1,0 +1,37 @@
+<%- include("../partials/header.ejs") %>
+
+
+
+
+
+
+<div class="container">
+    <h1 style="text-align:center;">login page 
+            
+    </h1>
+    <div class="row">
+                
+       
+
+        <div style="width:30%; margin:20px auto;">
+            
+                <form action="/login" method="POST">     
+                    <div class="form-froup">
+                        <input class="form-control"type="text" name="username" placeholder="enter username" required></br><br>
+                    </div>
+                        
+                    <div class="form-froup">
+                        <input class="form-control" type="password" name="password" placeholder="enter password" required><br><br>
+                    </div>
+
+                    <div class="form-froup">
+
+        <button class="btn btn-lg btn-primary btn-block">login</button> 
+                          
+                        </div>
+                </form> 
+            <a href="landing">Go back</a>
+
+        </div>
+    </div>
+</div>
