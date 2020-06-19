@@ -5,6 +5,7 @@ var express = require("express"),
     driver=require("./models/drivers"),
     seedDB=require("./seeds"),
     User=require("./models/users"),
+    Cab=require("./models/cabs"),
     Comment=require("./models/comment"),
     passport=require("passport"),
     LocalStratergy=require("passport-local"),
@@ -16,6 +17,7 @@ var express = require("express"),
 
  var commentsRoutes=require("./routes/comments"),
      driverRoutes=require("./routes/drivers"),
+     cabRoutes=require("./routes/cab"),
      userRoutes=require("./routes/user");
 
  //seedDB(); seed the database
@@ -66,6 +68,7 @@ mongoose.connect("mongodb://localhost:27017/test", {
 app.use("/",userRoutes);
 app.use("/drivers",driverRoutes);
 app.use("/drivers/:id/comments",commentsRoutes);
+
 
 
 function isDLoggedIn(req,res,next){

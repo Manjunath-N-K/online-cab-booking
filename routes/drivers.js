@@ -4,6 +4,7 @@ var router=express.Router();
 var driver=require("../models/drivers");
 var passport=require("passport");
 var User=require("../models/users");
+var Cab=require("../models/cabs");
 
 var middleware=require("../middleware");
 

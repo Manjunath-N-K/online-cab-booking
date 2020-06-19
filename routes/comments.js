@@ -3,6 +3,7 @@ var router=express.Router({mergeParams:true});
 
 var driver=require("../models/drivers");
 var Comment=require("../models/comment");
+var Cab=require("../models/cabs");
 var User=require("../models/users");
 
 var middleware=require("../middleware");
