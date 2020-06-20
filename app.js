@@ -11,6 +11,7 @@ var express = require("express"),
     LocalStratergy=require("passport-local"),
     passportLocalMongoose=require("passport-local-mongoose"),
      flash=require("connect-flash"),
+     
  mongoose = require("mongoose");
 
  //requiring routesclear
@@ -74,7 +75,6 @@ mongoose.connect("mongodb+srv://manju:manju@cluster0-uapga.mongodb.net/<dbname>?
 }).catch(err =>{
 console.log("ERROR",err.message);
 });
-
 
 
 app.use("/",userRoutes);
