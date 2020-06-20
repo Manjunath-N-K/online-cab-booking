@@ -51,18 +51,30 @@ res.locals.success=req.flash("success");
 next();
 });
 
-  //connect to db
-mongoose.connect("mongodb://localhost:27017/test", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-},function(err){
-  if(err){
-    console.log(err);
-  }else
-  {
-    console.log("mongo database connected");
-  }
+//   //connect to db
+// mongoose.connect("mongodb://localhost:27017/test", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// },function(err){
+//   if(err){
+//     console.log(err);
+//   }else
+//   {
+//     console.log("mongo database connected");
+//   }
+// });
+
+mongoose.connect("mongodb+srv://manju:manju@cluster0-uapga.mongodb.net/<dbname>?retryWrites=true&w=majority",
+				{
+	useNewUrlParser:true,
+	usecreateIndex:true,
+	useUnifiedTopology:true
+}).then(() =>{
+	console.log("connecte to db");
+}).catch(err =>{
+console.log("ERROR",err.message);
 });
+
 
 
 app.use("/",userRoutes);
